@@ -10,14 +10,12 @@
 
 #define delete_module(name, flags) syscall(__NR_delete_module, name, flags)
 
-int rmmod(int argc, char **argv) {
-    if (argc != 2) {
-        puts("Usage ./prog mymodule");
-        return EXIT_FAILURE;
+int rmmod(char **argv) {
+    if (sizeof(argv) != 2) {
+        return -1; // Incorect parametr
     }
     if (delete_module(argv[1], O_NONBLOCK) != 0) {
-        perror("delete_module");
-        return EXIT_FAILURE;
+        return 0; 
     }
-    return EXIT_SUCCESS;
+    return 1; // Succeed
 }

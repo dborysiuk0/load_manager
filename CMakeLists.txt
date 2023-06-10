@@ -2,10 +2,8 @@ cmake_minimum_required(VERSION 3.5)
 project(load_manager VERSION 0.0.1)
 enable_testing()
 
-add_library(load_manager STATIC source/is_module_loaded.c source/insmod.c source/rmmod.c)
-
+add_library(load_manager STATIC source/is_module_loaded.c source/insmod.c source/rmmod.c source/custom_popen.c)
 add_executable(test_insmod tests/test_is_loaded.c)
-
 target_link_libraries(test_insmod load_manager)
 
 # add Check to CMake

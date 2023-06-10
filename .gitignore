@@ -4,3 +4,7 @@ CMakeFiles
 .vscode
 CMakeCache.txt
 cmake_install.cmake
+CTestTestfile.cmake
+target_tests
+test_insmod
+libload_manager.a

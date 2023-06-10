@@ -165,6 +165,30 @@ target_tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/target_tests.dir/build.make CMakeFiles/target_tests.dir/build
 .PHONY : target_tests/fast
 
+source/custom_popen.o: source/custom_popen.c.o
+.PHONY : source/custom_popen.o
+
+# target to build an object file
+source/custom_popen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/load_manager.dir/build.make CMakeFiles/load_manager.dir/source/custom_popen.c.o
+.PHONY : source/custom_popen.c.o
+
+source/custom_popen.i: source/custom_popen.c.i
+.PHONY : source/custom_popen.i
+
+# target to preprocess a source file
+source/custom_popen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/load_manager.dir/build.make CMakeFiles/load_manager.dir/source/custom_popen.c.i
+.PHONY : source/custom_popen.c.i
+
+source/custom_popen.s: source/custom_popen.c.s
+.PHONY : source/custom_popen.s
+
+# target to generate assembly for a file
+source/custom_popen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/load_manager.dir/build.make CMakeFiles/load_manager.dir/source/custom_popen.c.s
+.PHONY : source/custom_popen.c.s
+
 source/insmod.o: source/insmod.c.o
 .PHONY : source/insmod.o
 
@@ -297,6 +321,9 @@ help:
 	@echo "... load_manager"
 	@echo "... target_tests"
 	@echo "... test_insmod"
+	@echo "... source/custom_popen.o"
+	@echo "... source/custom_popen.i"
+	@echo "... source/custom_popen.s"
 	@echo "... source/insmod.o"
 	@echo "... source/insmod.i"
 	@echo "... source/insmod.s"
